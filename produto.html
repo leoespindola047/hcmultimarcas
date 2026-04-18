@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Produto - HC Multimarcas</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">HC <span>Multimarcas</span></a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="produtos.html">Produtos</a></li>
+        <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb-bar">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+      <li class="breadcrumb-item"><a href="produtos.html">Produtos</a></li>
+      <li class="breadcrumb-item active" id="breadcrumb-nome">Carregando...</li>
+    </ol>
+  </div>
+</div>
+
+<!-- CONTEÚDO PRINCIPAL -->
+<section class="produto-section">
+  <div class="container">
+    <!-- PRODUTO ENCONTRADO -->
+    <div id="conteudo-produto" class="fade-in" style="display:none;">
+      <div class="row g-5 align-items-start">
+
+        <!-- IMAGEM -->
+        <div class="col-md-6 galeria-wrapper">
+          <img id="imagem" class="img-principal" alt="">
+        </div>
+
+        <!-- INFO -->
+        <div class="col-md-6">
+          <div class="info-card">
+            <span class="tag-categoria" id="tag-categoria"></span>
+            <h1 class="produto-nome" id="nome"></h1>
+            <p class="produto-preco">
+              <span id="preco"></span>
+              <br><small>Pagamento via WhatsApp</small>
+            </p>
+
+            <hr class="divisor">
+
+            <!-- CORES -->
+            <div id="bloco-cores">
+              <div class="opcoes-label">
+                Cor <span class="selecionado" id="cor-selecionada-label">— selecione</span>
+              </div>
+              <div class="opcoes-wrapper" id="cores"></div>
+              <p class="aviso-selecao" id="aviso-cor">Por favor, selecione uma cor.</p>
+            </div>
+
+            <!-- TAMANHOS -->
+            <div id="bloco-tamanhos">
+              <div class="opcoes-label">
+                Tamanho <span class="selecionado" id="tam-selecionado-label">— selecione</span>
+              </div>
+              <div class="opcoes-wrapper" id="tamanhos"></div>
+              <p class="aviso-selecao" id="aviso-tam">Por favor, selecione um tamanho.</p>
+            </div>
+
+            <hr class="divisor">
+
+            <!-- BOTÃO COMPRAR -->
+            <a id="whatsapp" class="btn-comprar" href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/>
+              </svg>
+              Comprar via WhatsApp
+            </a>
+
+            <a href="produtos.html" class="btn-voltar">
+              ← Voltar para produtos
+            </a>
+
+            <!-- DETALHES EXTRAS -->
+            <div class="detalhes-extras">
+              <div class="detalhe-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#25D366" viewBox="0 0 16 16">
+                  <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm3.854 5.146a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.793l3.646-3.647a.5.5 0 0 1 .708 0z"/>
+                </svg>
+                Atendimento personalizado via WhatsApp
+              </div>
+              <div class="detalhe-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#25D366" viewBox="0 0 16 16">
+                  <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm3.854 5.146a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.793l3.646-3.647a.5.5 0 0 1 .708 0z"/>
+                </svg>
+                Produtos selecionados e de qualidade
+              </div>
+              <div class="detalhe-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#25D366" viewBox="0 0 16 16">
+                  <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm3.854 5.146a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.793l3.646-3.647a.5.5 0 0 1 .708 0z"/>
+                </svg>
+                Consulte disponibilidade de estoque
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PRODUTO NÃO ENCONTRADO -->
+    <div id="nao-encontrado" class="nao-encontrado" style="display:none;">
+      <h2>Produto não encontrado</h2>
+      <p>O produto que você procura não existe ou foi removido.</p>
+      <a href="produtos.html" class="btn-voltar" style="justify-content:center; margin-top:1rem;">
+        ← Ver todos os produtos
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h3>Ficou com dúvida?</h3>
+  <p>Fale diretamente com nossa equipe</p>
+  <a href="https://wa.me/5548999143649" class="btn-whatsapp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+      <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/>
+    </svg>
+    Falar com a loja
+  </a>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const produtos = {
+    1: { nome: "Camiseta Street",    preco: "R$ 79,90",  categoria: "Camisetas",  imagem: "https://via.placeholder.com/600x750", cores: ["Preto","Branco","Vermelho"], tamanhos: ["P","M","G","GG"] },
+    2: { nome: "Calça Jeans",        preco: "R$ 129,90", categoria: "Calças",     imagem: "https://via.placeholder.com/600x750", cores: ["Azul","Preto"],              tamanhos: ["38","40","42","44"] },
+    3: { nome: "Bermuda Tactel",     preco: "R$ 89,90",  categoria: "Bermudas",   imagem: "https://via.placeholder.com/600x750", cores: ["Preto","Cinza"],             tamanhos: ["P","M","G"] },
+    4: { nome: "Boné Premium",       preco: "R$ 59,90",  categoria: "Bonés",      imagem: "https://via.placeholder.com/600x750", cores: ["Preto","Branco"],            tamanhos: ["Único"] },
+    5: { nome: "Perfume Importado",  preco: "R$ 199,90", categoria: "Perfumes",   imagem: "https://via.placeholder.com/600x750", cores: ["Único"],                     tamanhos: ["100ml"] },
+    6: { nome: "Cinto de Couro",     preco: "R$ 49,90",  categoria: "Acessórios", imagem: "https://via.placeholder.com/600x750", cores: ["Marrom","Preto"],            tamanhos: ["P","M","G"] }
+  };
+
+  const corParaClasse = {
+    "Preto": "cor-preto", "Branco": "cor-branco", "Azul": "cor-azul",
+    "Vermelho": "cor-vermelho", "Cinza": "cor-cinza", "Marrom": "cor-marrom",
+    "Único": "cor-unico"
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+  const produto = produtos[id];
+
+  if (produto) {
+    document.title = `${produto.nome} - HC Multimarcas`;
+    document.getElementById('conteudo-produto').style.display = 'block';
+    document.getElementById('breadcrumb-nome').textContent = produto.nome;
+    document.getElementById('tag-categoria').textContent = produto.categoria;
+    document.getElementById('nome').textContent = produto.nome;
+    document.getElementById('preco').textContent = produto.preco;
+    document.getElementById('imagem').src = produto.imagem;
+    document.getElementById('imagem').alt = produto.nome;
+
+    let corSelecionada = "";
+    let tamanhoSelecionado = "";
+
+    // CORES
+    const coresDiv = document.getElementById('cores');
+    produto.cores.forEach(cor => {
+      const el = document.createElement('span');
+      el.className = "opcao-cor";
+
+      const dot = document.createElement('span');
+      dot.className = `dot-cor ${corParaClasse[cor] || 'cor-unico'}`;
+      el.appendChild(dot);
+      el.appendChild(document.createTextNode(cor));
+
+      el.onclick = () => {
+        document.querySelectorAll('#cores .opcao-cor').forEach(c => c.classList.remove('ativa'));
+        el.classList.add('ativa');
+        corSelecionada = cor;
+        document.getElementById('cor-selecionada-label').textContent = cor;
+        document.getElementById('aviso-cor').style.display = 'none';
+        atualizarLink();
+      };
+
+      coresDiv.appendChild(el);
+    });
+
+    // TAMANHOS
+    const tamanhosDiv = document.getElementById('tamanhos');
+    produto.tamanhos.forEach(t => {
+      const el = document.createElement('span');
+      el.className = "opcao-tam";
+      el.textContent = t;
+
+      el.onclick = () => {
+        document.querySelectorAll('#tamanhos .opcao-tam').forEach(c => c.classList.remove('ativa'));
+        el.classList.add('ativa');
+        tamanhoSelecionado = t;
+        document.getElementById('tam-selecionado-label').textContent = t;
+        document.getElementById('aviso-tam').style.display = 'none';
+        atualizarLink();
+      };
+
+      tamanhosDiv.appendChild(el);
+    });
+
+    // Auto-selecionar se único
+    if (produto.cores.length === 1 && produto.cores[0] === "Único") {
+      coresDiv.querySelector('.opcao-cor').click();
+      document.getElementById('bloco-cores').style.display = 'none';
+    }
+
+    if (produto.tamanhos.length === 1) {
+      tamanhosDiv.querySelector('.opcao-tam').click();
+    }
+
+    function atualizarLink() {
+      let mensagem = `Olá! Tenho interesse no produto: *${produto.nome}* — ${produto.preco}`;
+      if (corSelecionada && corSelecionada !== "Único") mensagem += ` | Cor: ${corSelecionada}`;
+      if (tamanhoSelecionado) mensagem += ` | Tamanho: ${tamanhoSelecionado}`;
+
+      document.getElementById('whatsapp').href =
+        `https://wa.me/5548999143649?text=${encodeURIComponent(mensagem)}`;
+    }
+
+    // Validação antes de abrir WhatsApp
+    document.getElementById('whatsapp').addEventListener('click', function(e) {
+      let valido = true;
+
+      const temCores = produto.cores.length > 0 && !(produto.cores.length === 1 && produto.cores[0] === "Único");
+      if (temCores && !corSelecionada) {
+        document.getElementById('aviso-cor').style.display = 'block';
+        valido = false;
+      }
+
+      if (!tamanhoSelecionado) {
+        document.getElementById('aviso-tam').style.display = 'block';
+        valido = false;
+      }
+
+      if (!valido) e.preventDefault();
+    });
+
+    atualizarLink();
+
+  } else {
+    document.getElementById('nao-encontrado').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>

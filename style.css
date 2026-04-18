@@ -1,0 +1,541 @@
+/* ============================================
+   HC MULTIMARCAS — style.css
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --preto:        #0a0a0a;
+  --cinza-escuro: #1a1a1a;
+  --cinza-medio:  #2e2e2e;
+  --cinza-claro:  #f5f5f5;
+  --branco:       #ffffff;
+  --destaque:     #f1f500;;
+  --borda:        #e8e8e8;
+  --verde-wpp:    #25D366;
+}
+
+/* BASE */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: 'Barlow', sans-serif;
+  background: var(--cinza-claro);
+  color: var(--preto);
+  margin: 0;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+.navbar {
+  background: var(--preto) !important;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid #222;
+}
+
+.navbar-brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.7rem;
+  letter-spacing: 2px;
+  color: var(--branco) !important;
+}
+
+.navbar-brand span { color: var(--destaque); }
+
+.nav-link {
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #aaa !important;
+  transition: color 0.2s;
+  margin: 0 4px;
+}
+
+.nav-link:hover,
+.nav-link.active { color: var(--branco) !important; }
+
+/* ============================================
+   HERO (index)
+   ============================================ */
+.hero {
+  height: 90vh;
+  background: url('imagem.webp') no-repeat center center / cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--branco);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.58);
+}
+
+.hero .container { position: relative; z-index: 2; }
+
+.hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  letter-spacing: 4px;
+  line-height: 1;
+  margin-bottom: 0.8rem;
+}
+
+.hero p {
+  font-size: 1rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 2rem;
+}
+
+/* ============================================
+   SECTION HEADERS genéricos
+   ============================================ */
+.section-header {
+  background: var(--preto);
+  color: var(--branco);
+  padding: 5rem 0 3.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-header::before {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 10rem;
+  color: rgba(255,255,255,0.03);
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.section-header h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem;
+  letter-spacing: 4px;
+  margin-bottom: 0.4rem;
+}
+
+.section-header p {
+  color: var(--destaque);
+  font-size: 0.82rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ============================================
+   CARDS de produto (destaques + listagem)
+   ============================================ */
+.card-produto {
+  background: var(--branco);
+  border: none;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.07);
+  position: relative;
+}
+
+.card-produto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.13);
+}
+
+.card-produto .img-wrapper {
+  position: relative;
+  overflow: hidden;
+  background: #eee;
+}
+
+.card-produto img {
+  width: 100%;
+  aspect-ratio: 3/3.5;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.card-produto:hover img { transform: scale(1.05); }
+
+.badge-categoria {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--preto);
+  color: var(--branco);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 2px;
+}
+
+.card-produto .card-body {
+  padding: 1.3rem 1.4rem 1.4rem;
+  border-top: 1px solid #f0f0f0;
+  text-align: center;
+}
+
+.card-produto h5 {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+  color: var(--preto);
+}
+
+.card-produto .preco {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--preto);
+  margin-bottom: 1rem;
+}
+
+/* ============================================
+   BOTÕES
+   ============================================ */
+.btn-ver-mais,
+.btn-hc-dark {
+  display: block;
+  width: 100%;
+  background: var(--preto);
+  color: var(--branco);
+  border: none;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.6rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+
+.btn-ver-mais:hover,
+.btn-hc-dark:hover {
+  background: var(--destaque);
+  color: var(--preto);
+}
+
+.btn-hc-outline {
+  display: inline-block;
+  background: transparent;
+  color: var(--branco);
+  border: 1.5px solid var(--branco);
+  border-radius: 2px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.65rem 1.8rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+
+.btn-hc-outline:hover {
+  background: var(--branco);
+  color: var(--preto);
+}
+
+.btn-hc-destaque {
+  display: inline-block;
+  background: var(--destaque);
+  color: var(--preto);
+  border: none;
+  border-radius: 2px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+
+.btn-hc-destaque:hover {
+  background: #b8945a;
+  color: var(--preto);
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--verde-wpp);
+  color: var(--branco);
+  border: none;
+  border-radius: 2px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  text-decoration: none;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.btn-whatsapp:hover { background: #1ebe5a; color: var(--branco); }
+
+/* ============================================
+   CTA SECTIONS
+   ============================================ */
+.cta-section {
+  background: var(--preto);
+  color: var(--branco);
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.cta-section h2,
+.cta-section h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 3px;
+  margin-bottom: 0.4rem;
+}
+
+.cta-section h2 { font-size: 2.6rem; }
+.cta-section h3 { font-size: 2.2rem; }
+
+.cta-section p {
+  color: #888;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  background: #000;
+  color: #666;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  border-top: 1px solid #1a1a1a;
+}
+
+footer strong { color: var(--destaque); }
+
+/* ============================================
+   ANIMAÇÕES
+   ============================================ */
+.fade-in {
+  animation: fadeIn 0.5s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   FILTROS (produtos.html)
+   ============================================ */
+.filtros-wrapper {
+  background: var(--branco);
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1.2rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.btn-filtro {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1.5px solid #ccc;
+  background: transparent;
+  color: #555;
+  border-radius: 2px;
+  padding: 0.45rem 1.1rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn-filtro:hover { border-color: var(--preto); color: var(--preto); }
+.btn-filtro.ativo { background: var(--preto); color: var(--branco); border-color: var(--preto); }
+
+/* ============================================
+   PRODUTO DETALHE (produto.html)
+   ============================================ */
+.breadcrumb-bar {
+  background: var(--branco);
+  border-bottom: 1px solid var(--borda);
+  padding: 0.75rem 0;
+}
+
+.breadcrumb { margin: 0; font-size: 0.78rem; letter-spacing: 0.5px; }
+.breadcrumb-item a { color: #888; text-decoration: none; }
+.breadcrumb-item.active { color: var(--preto); font-weight: 600; }
+
+.info-card {
+  background: var(--branco);
+  border-radius: 4px;
+  padding: 2rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+}
+
+.opcao-cor,
+.opcao-tam {
+  border: 1.5px solid #ccc;
+  border-radius: 2px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+  background: transparent;
+  color: var(--preto);
+  user-select: none;
+}
+
+.opcao-cor { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; }
+.opcao-tam { display: inline-flex; align-items: center; justify-content: center; min-width: 48px; height: 40px; padding: 0 10px; font-weight: 600; }
+
+.opcao-cor:hover,
+.opcao-tam:hover { border-color: var(--preto); }
+
+.opcao-cor.ativa,
+.opcao-tam.ativa { border-color: var(--preto); border-width: 2px; background: var(--preto); color: var(--branco); }
+
+/* ============================================
+   SOBRE (sobre.html)
+   ============================================ */
+.sobre-card {
+  background: var(--branco);
+  border-radius: 4px;
+  padding: 2rem 2.2rem;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.07);
+  height: 100%;
+}
+
+.sobre-card h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--destaque);
+  display: inline-block;
+}
+
+.sobre-card p,
+.sobre-card li {
+  font-size: 0.92rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+.sobre-card ul { padding-left: 1.2rem; margin: 0; }
+.sobre-card li { margin-bottom: 0.3rem; }
+
+.diferencial-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 0.8rem;
+}
+
+.diferencial-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--preto);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   CONTATO (contato.html)
+   ============================================ */
+.contato-card {
+  background: var(--branco);
+  border-radius: 4px;
+  padding: 2rem 2.2rem;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.07);
+}
+
+.contato-info-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--borda);
+}
+
+.contato-info-item:last-child { border-bottom: none; }
+
+.contato-icon {
+  width: 42px;
+  height: 42px;
+  background: var(--cinza-claro);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contato-info-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 2px;
+}
+
+.contato-info-value {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--preto);
+}
+
+/* Formulário */
+.form-hc .form-control {
+  border: 1.5px solid #ddd;
+  border-radius: 2px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.88rem;
+  padding: 0.7rem 1rem;
+  transition: border-color 0.2s;
+  background: var(--cinza-claro);
+}
+
+.form-hc .form-control:focus {
+  border-color: var(--preto);
+  box-shadow: none;
+  background: var(--branco);
+}
+
+.form-hc label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #777;
+  margin-bottom: 0.4rem;
+}
